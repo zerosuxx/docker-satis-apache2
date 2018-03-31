@@ -25,9 +25,8 @@ RUN rm -f /etc/localtime \
 # Install binaries
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && cd /var/www \
-    && composer create-project composer/satis --stability=dev --keep-vcs
-
-RUN mkdir -p /root/.ssh \
+    && composer create-project composer/satis --stability=dev --keep-vcs \
+	&& mkdir -p /root/.ssh \
 	&& sed -i "s/#   StrictHostKeyChecking ask/    StrictHostKeyChecking no/" /etc/ssh/ssh_config
  
 # Define workspace
