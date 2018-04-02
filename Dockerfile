@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 # Update and install required packages
 RUN apt-get update \
     && apt-get -y dist-upgrade \
-    && apt-get install -y git curl cron zlib1g-dev libicu-dev g++ rsyslog nano\
+    && apt-get install -y git curl cron zlib1g-dev libicu-dev g++ rsyslog nano \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-install zip
